@@ -326,6 +326,7 @@ final class ECSConfigBuilder
         bool $php82Migration = false,
         bool $php83Migration = false,
         bool $php84Migration = false,
+        bool $php85Migration = false,
         bool $phpunit30MigrationRisky = false,
         bool $phpunit32MigrationRisky = false,
         bool $phpunit35MigrationRisky = false,
@@ -444,6 +445,10 @@ final class ECSConfigBuilder
 
         if ($php84Migration) {
             $this->dynamicSets[] = '@PHP84Migration';
+        }
+
+        if ($php85Migration) {
+            $this->dynamicSets[] = '@PHP85Migration';
         }
 
         if ($phpunit30MigrationRisky) {
